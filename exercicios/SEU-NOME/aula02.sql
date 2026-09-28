@@ -6,7 +6,13 @@
 -- Cada bloco roda num banco em branco: crie o que voce for usar.
 
 -- ex1
-
+CREATE TABLE LIVRO (
+    ID INT PRIMARY KEY
+    TITULO VARCHAR(50) NOT NULL
+    AUTOR VARCHAR(60) NOT NULL
+    ANO INT
+    EXEMPLARES INT NOT NULL DEFAULT 1
+)
 
 -- ex2
 
