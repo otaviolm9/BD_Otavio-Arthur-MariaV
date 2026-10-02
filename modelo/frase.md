@@ -1,31 +1,25 @@
-# O caso do trio
+# O modelo do caso do trio
 
-**Integrantes: Otávio, Maria Vitoria, Arthur Conrad**
+Feito na **Aula 01**, pelos três juntos. A biblioteca precisa saber quem são os
+alunos cadastrados, quais livros existem e em qual categoria cada livro está,
+além de registrar cada empréstimo, sua devolução e eventuais multas.
 
-**Turma: 1°C Desenvolvimento de Sistemas**
+## Entidades
 
----
+- **ALUNO**: `id_aluno`, `nome`, `turma`
+- **LIVRO**: `id_livro`, `titulo`, `autor`, `ano_publicacao`, `id_categoria`
+- **CATEGORIA**: `id_categoria`, `nome`
+- **EMPRESTIMO**: `id_emprestimo`, `id_aluno`, `id_livro`,
+  `data_emprestimo`, `data_devolucao`, `prazo`, `status`, `multa`
 
-## Em uma frase
+## Relacionamentos
 
-a biblioteca tem que saber quais livros disponiveis(e onde estão, em qual pratileira?), quais estão em emprestimos, quais estão reservados, quais estão em atraso, quem tem cadastro para poder fazer o emprestimo
->
-> Exemplo: a secretaria precisa saber qual aluno está inscrito em qual
-> modalidade esportiva, desde quando, e se a inscrição ainda vale.
+Um **ALUNO** pode realizar vários empréstimos, e um **LIVRO** pode aparecer em
+vários empréstimos ao longo do tempo. Portanto, **EMPRESTIMO** é a entidade
+associativa do relacionamento N:N entre ALUNO e LIVRO. Os dados
+`data_emprestimo`, `data_devolucao`, `prazo`, `status` e `multa` pertencem ao
+empréstimo, isto é, ao encontro entre um aluno e um livro.
 
-## As entidades
-
-Cada substantivo da frase que tem vida própria e que você precisa guardar mais
-de um. Liste aqui, um por linha, com dois ou três atributos de cada:
-
--   ALUNO [ID, NOME, TURMA]
--   LIVRO [ID, PRATILEIRA, STATUS, AUTOR, GENERO, COLECAO]
--   EMPRESTIMO [ID, ID-ALUNO, ID-LIVRO, PRAZO]
--   PRAZO [ID, ID-EMPRESTIMO, PRAZO-EMPRESTIMO, VALOR]
-
-## O N:N com atributo próprio
-
-Qual é o par de entidades que se cruza muitos-para-muitos, e qual dado nasce
-**do encontro** entre elas (e não de nenhum dos dois lados)?
-
--   ALUNO - EMPRESTIMO = PRAZO
+Cada **CATEGORIA** classifica vários livros, enquanto cada **LIVRO** pertence a
+uma categoria (1:N). **PRAZO** não é entidade separada: é atributo próprio de
+EMPRESTIMO.

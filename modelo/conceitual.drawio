@@ -1,0 +1,31 @@
+<mxfile host="app.diagrams.net" modified="2026-10-01T22:25:00.000Z" agent="GitHub Copilot" version="24.7.17">
+  <diagram id="biblioteca-aula01" name="Biblioteca">
+    <mxGraphModel dx="1200" dy="800" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1400" pageHeight="900" math="0" shadow="0">
+      <root>
+        <mxCell id="0"/>
+        <mxCell id="1" parent="0"/>
+        <mxCell id="aluno" value="&lt;b&gt;ALUNO&lt;/b&gt;&lt;br&gt;id_aluno (PK)&lt;br&gt;nome&lt;br&gt;turma" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=14;" vertex="1" parent="1">
+          <mxGeometry x="80" y="210" width="210" height="130" as="geometry"/>
+        </mxCell>
+        <mxCell id="livro" value="&lt;b&gt;LIVRO&lt;/b&gt;&lt;br&gt;id_livro (PK)&lt;br&gt;titulo&lt;br&gt;autor&lt;br&gt;ano_publicacao&lt;br&gt;id_categoria (FK)" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=14;" vertex="1" parent="1">
+          <mxGeometry x="820" y="210" width="250" height="160" as="geometry"/>
+        </mxCell>
+        <mxCell id="categoria" value="&lt;b&gt;CATEGORIA&lt;/b&gt;&lt;br&gt;id_categoria (PK)&lt;br&gt;nome" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=14;" vertex="1" parent="1">
+          <mxGeometry x="820" y="520" width="250" height="110" as="geometry"/>
+        </mxCell>
+        <mxCell id="emprestimo" value="&lt;b&gt;EMPRESTIMO&lt;/b&gt;&lt;br&gt;id_emprestimo (PK)&lt;br&gt;data_emprestimo&lt;br&gt;data_devolucao&lt;br&gt;prazo&lt;br&gt;status&lt;br&gt;multa&lt;br&gt;id_aluno, id_livro (FKs)" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=14;" vertex="1" parent="1">
+          <mxGeometry x="410" y="190" width="270" height="210" as="geometry"/>
+        </mxCell>
+        <mxCell id="aluno-emprestimo" value="1 : N" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=none;strokeWidth=2;" edge="1" parent="1" source="aluno" target="emprestimo">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="livro-emprestimo" value="1 : N" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=none;strokeWidth=2;" edge="1" parent="1" source="emprestimo" target="livro">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="categoria-livro" value="1 : N" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=none;strokeWidth=2;" edge="1" parent="1" source="categoria" target="livro">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
